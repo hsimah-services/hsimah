@@ -9,42 +9,42 @@
 
 /* Theme variables */
 :root {
-  --color-background: oklch(0.9885 0.0057 84.5659);
-  --color-foreground: oklch(0.366 0.0251 49.6085);
-  --color-card: oklch(0.9686 0.0091 78.2818);
-  --color-card-foreground: oklch(0.366 0.0251 49.6085);
-  --color-primary: oklch(0.5553 0.1455 48.9975);
-  --color-primary-foreground: oklch(1 0 0);
-  --color-secondary: oklch(0.8276 0.0752 74.44);
-  --color-secondary-foreground: oklch(0.4444 0.0096 73.639);
-  --color-muted: oklch(0.9363 0.0218 83.2637);
-  --color-muted-foreground: oklch(0.5534 0.0116 58.0708);
-  --color-accent: oklch(0.9 0.05 74.9889);
-  --color-accent-foreground: oklch(0.4444 0.0096 73.639);
-  --color-border: oklch(0.8866 0.0404 89.6994);
-  --color-ring: oklch(0.5553 0.1455 48.9975);
-  --radius: 0.3rem;
-  --font-sans: "Oxanium", sans-serif;
-  --font-mono: "Fira Code", monospace;
-  --font-serif: "Merriweather", serif;
+  --color-background: oklch(0.9940 0 0);
+  --color-foreground: oklch(0 0 0);
+  --color-card: oklch(0.9940 0 0);
+  --color-card-foreground: oklch(0 0 0);
+  --color-primary: oklch(0.8545 0.1675 159.6564);
+  --color-primary-foreground: oklch(0 0 0);
+  --color-secondary: oklch(0.9933 0.0011 197.1390);
+  --color-secondary-foreground: oklch(0.1344 0 0);
+  --color-muted: oklch(0.9702 0 0);
+  --color-muted-foreground: oklch(0.4386 0 0);
+  --color-accent: oklch(0.9947 0.0074 164.9465);
+  --color-accent-foreground: oklch(0.6184 0.1489 155.4444);
+  --color-border: oklch(0.9722 0.0034 247.8581);
+  --color-ring: oklch(0.8545 0.1675 159.6564);
+  --radius: 1.4rem;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  --font-serif: "Lora", serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: oklch(0.2161 0.0061 56.0434);
-    --color-foreground: oklch(0.9699 0.0013 106.4238);
-    --color-card: oklch(0.2685 0.0063 34.2976);
-    --color-card-foreground: oklch(0.9699 0.0013 106.4238);
-    --color-primary: oklch(0.7049 0.1867 47.6044);
-    --color-primary-foreground: oklch(1 0 0);
-    --color-secondary: oklch(0.4444 0.0096 73.639);
-    --color-secondary-foreground: oklch(0.9232 0.0026 48.7171);
-    --color-muted: oklch(0.233 0.0073 67.4563);
-    --color-muted-foreground: oklch(0.7161 0.0091 56.259);
-    --color-accent: oklch(0.3598 0.0497 229.3202);
-    --color-accent-foreground: oklch(0.9232 0.0026 48.7171);
-    --color-border: oklch(0.3741 0.0087 67.5582);
-    --color-ring: oklch(0.7049 0.1867 47.6044);
+    --color-background: oklch(0 0 0);
+    --color-foreground: oklch(0.9551 0 0);
+    --color-card: oklch(0.1448 0 0);
+    --color-card-foreground: oklch(0.9551 0 0);
+    --color-primary: oklch(0.8545 0.1675 159.6564);
+    --color-primary-foreground: oklch(0 0 0);
+    --color-secondary: oklch(0.4700 0.0900 160.0079);
+    --color-secondary-foreground: oklch(0.9551 0 0);
+    --color-muted: oklch(0.2653 0.0037 286.1465);
+    --color-muted-foreground: oklch(0.6731 0 0);
+    --color-accent: oklch(0.3004 0.0609 159.8938);
+    --color-accent-foreground: oklch(0.9970 0 0);
+    --color-border: oklch(0.2138 0.0019 286.2347);
+    --color-ring: oklch(0.8545 0.1675 159.6564);
   }
 }
 
@@ -129,7 +129,7 @@ a {
 /* Card */
 .card {
   border-radius: 0.75rem;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-accent);
   background-color: var(--color-card);
   color: var(--color-card-foreground);
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
@@ -192,7 +192,7 @@ a {
 
 .feed-date {
   font-size: 0.875rem;
-  color: var(--color-muted-foreground);
+  color: var(--color-primary);
 }
 
 /* BlogPost */
