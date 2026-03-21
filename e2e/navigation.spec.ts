@@ -4,12 +4,12 @@ test.describe('Navigation', () => {
   test('nav bar has home link', async ({ page }) => {
     await page.goto('/')
     await expect(page.getByRole('link', { name: 'Home' })).toBeVisible()
-    await expect(page.getByRole('link', { name: 'hblake', exact: true })).toBeVisible()
+    await expect(page.getByRole('link', { name: 'hsimah.com', exact: true })).toBeVisible()
   })
 
   test('can navigate from post back to feed', async ({ page }) => {
     await page.goto('/posts/hello-world')
-    await page.getByRole('link', { name: 'hblake', exact: true }).click()
+    await page.getByRole('link', { name: 'hsimah.com', exact: true }).click()
     await expect(page).toHaveURL('/')
     await expect(page.getByText('Hello World')).toBeVisible()
   })

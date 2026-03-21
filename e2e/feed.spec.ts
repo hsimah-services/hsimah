@@ -10,7 +10,7 @@ test.describe('Feed page', () => {
 
   test('shows post description', async ({ page }) => {
     await page.goto('/')
-    await expect(page.getByText('My first blog post')).toBeVisible()
+    await expect(page.getByText('A little about me and this blog')).toBeVisible()
   })
 
   test('clicking a post navigates to the post page', async ({ page }) => {
