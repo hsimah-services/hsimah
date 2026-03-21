@@ -1,0 +1,79 @@
+# ┌──────────────────────────────────────────────────────────────────┐
+# │ ⚠  SECURITY WARNING — SELF-HOSTED RUNNER                       │
+# │                                                                │
+# │ The deploy job runs on a SELF-HOSTED runner (space-needle).    │
+# │ The trigger MUST remain `push` to `main` only.                │
+# │                                                                │
+# │ NEVER change the trigger to `pull_request`.                    │
+# │ This repo is PRIVATE — but a pull_request trigger would still  │
+# │ execute arbitrary code from that PR on our self-hosted runner. │
+# │                                                                │
+# │ See: https://docs.github.com/en/actions/security-for-github-  │
+# │ actions/security-hardening-for-github-actions                  │
+# └──────────────────────────────────────────────────────────────────┘
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run lint
+
+      - run: npm run build
+
+      - uses: actions/upload-artifact@v5
+        with:
+          name: dist
+          path: dist/
+
+  e2e-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run Playwright tests
+        run: npm run test:e2e
+
+      - name: Upload report
+        uses: actions/upload-artifact@v5
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
+
+  deploy:
+    runs-on: [self-hosted, space-needle]
+    needs: [build, e2e-tests]
+    steps:
+      - uses: actions/download-artifact@v5
+        with:
+          name: dist
+          path: dist/
+
+      - name: Deploy to hblake
+        run: docker cp dist/. hblake:/usr/share/nginx/html/
