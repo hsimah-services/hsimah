@@ -20,7 +20,7 @@ export class HbHeader extends HTMLElement {
       <header class="header">
         <div class="header-inner">
           <div class="header-content">
-            <a href="/" class="header-logo">hblake</a>
+            <a href="/" class="header-logo">hsimah.com</a>
             <nav class="header-nav">
               <a href="/" class="nav-link ${escapeHtml(homeClass)}">Home</a>
               <a href="/about" class="nav-link ${escapeHtml(aboutClass)}">About</a>

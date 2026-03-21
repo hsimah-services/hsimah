@@ -236,6 +236,12 @@ a {
   width: 32px;
   height: 32px;
   margin-bottom: 0;
+  vertical-align: middle;
+}
+
+.about .prose a:has(img[src$=".svg"]) {
+  text-decoration: none;
+  color: var(--color-foreground);
 }
 
 /* PostPage */
