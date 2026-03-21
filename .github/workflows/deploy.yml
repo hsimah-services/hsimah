@@ -75,5 +75,5 @@ jobs:
           name: dist
           path: dist/
 
-      - name: Deploy to hblake
-        run: docker cp dist/. hblake:/usr/share/nginx/html/
+      - name: Deploy to pawst
+        run: docker cp dist/. pawst:/usr/share/nginx/hblake/
