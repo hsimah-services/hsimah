@@ -1,7 +1,7 @@
 import { defineConfig } from 'markr'
 
 export default defineConfig({
-  title: 'hsimah.com',
+  title: 'hsimah',
   fonts: {
     sans: {
       family: 'Oxanium',
