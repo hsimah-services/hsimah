@@ -7,7 +7,7 @@ Hey, I'm Hamish. I'm a software engineer at Meta, and an Australian expat living
 
 ## What's this blog?
 
-A place to put stuff that doesn't belong on a [technical blog](https://hbla.ke). Expect infrequent posts about whatever I'm into at the time. Could be anything.
+A place to put stuff that doesn't belong on my [technical blog](https://hbla.ke). Expect infrequent posts about whatever I'm into at the time. Could be anything.
 
 ## A bit about me
 

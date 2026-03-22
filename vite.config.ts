@@ -1,14 +1,10 @@
-import { defineConfig } from 'vite'
-import path from 'path'
+import { defineConfig, type PluginOption } from 'vite'
+import markrPlugin from 'markr/vite'
 
 export default defineConfig({
   base: '/',
   server: {
-    port: 3001,
+    port: 3456,
   },
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'),
-    },
-  },
+  plugins: [markrPlugin() as PluginOption],
 })

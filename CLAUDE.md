@@ -4,9 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-hblake — a minimal static blog platform. Posts are markdown files in the `posts/` directory. Web Components + TypeScript frontend built with Vite, deployed as a static site.
+hblake — a minimal static blog platform built on [markr](https://github.com/hsimah-services/markr). Posts are markdown files in the `posts/` directory. The site is a thin config-only consumer of markr, which provides the Vite plugin, web components, post parsing, theming, and base CSS.
 
-**Philosophy**: This project prioritizes minimalism and zero runtime dependencies (aside from `marked` for markdown). Prefer vanilla browser APIs and Web Components over frameworks or libraries. Do not introduce new dependencies without explicit approval.
+**Philosophy**: This project prioritizes minimalism. All rendering, routing, and component logic lives in the markr package. hblake only provides configuration (theme, fonts, colors) and content (markdown posts).
 
 ## Commands
 
@@ -24,30 +24,18 @@ npx playwright test --grep "test name"          # Run tests matching a pattern
 
 ## Architecture
 
-**Stack**: Web Components, Vite 7, TypeScript (strict), static CSS, Playwright
+**Stack**: markr (Web Components + Vite plugin), TypeScript (strict), Playwright
 
-**Path alias**: `@/` maps to `./src/` — always use this instead of relative imports.
+**Configuration**: `markr.config.ts` defines the site title, fonts, and color theme. The markr Vite plugin reads this config and generates the HTML shell, CSS variables, and entry point.
 
 **Blog data flow**:
 - Markdown posts live in `posts/` with YAML frontmatter (title, date, description, optional image)
-- `src/lib/posts.ts` loads all posts at build time via `import.meta.glob`, parses frontmatter, and exports `getAllPosts()` and `getPostBySlug(slug)`
+- markr loads all posts at build time, parses frontmatter, and renders markdown to HTML
 - Posts are sorted by date descending
-- Markdown is rendered to HTML using `marked`
 
-**Routing**: Client-side routing in `<hb-app>` (`src/web/hb-app.ts`):
-- `/` → `<hb-feed>` (list of all posts)
-- `/posts/:slug` → `<hb-blog-post>` (single post)
-- Uses `history.pushState()` with `popstate` listener and `<a>` click interception
-
-**Web components** (`src/web/`):
-- `hb-app` — root component, owns layout shell and client-side routing
-- `hb-header` — site header with nav
-- `hb-feed` — renders list of post cards
-- `hb-card` — individual post card
-- `hb-blog-post` — renders a single post from markdown
-- `register.ts` — registers all custom elements
-
-**Entry point**: `src/main.ts` imports CSS and `register.ts`. `index.html` contains `<hb-app>`.
+**Routing**: Client-side routing provided by markr's `mr-app` component:
+- `/` → `mr-feed` (list of all posts)
+- `/posts/:slug` → `mr-blog-post` (single post)
 
 **Adding a post**: Create a new `.md` file in `posts/` with frontmatter. The filename becomes the URL slug.
 
@@ -60,10 +48,9 @@ npx playwright test --grep "test name"          # Run tests matching a pattern
 ## TypeScript
 
 - Strict mode enabled, no unused locals/parameters allowed
-- Separate tsconfig files: `tsconfig.app.json` (app code), `tsconfig.node.json` (build tools), `tsconfig.e2e.json` (tests)
+- Separate tsconfig files: `tsconfig.app.json` (markr config), `tsconfig.node.json` (build tools), `tsconfig.e2e.json` (tests)
 
 ## Conventions
 
-- File naming: kebab-case for files, PascalCase for class exports
-- Web components prefixed with `hb-`
+- File naming: kebab-case for files
 - e2e/ directory is excluded from ESLint
