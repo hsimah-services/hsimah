@@ -3,7 +3,7 @@ import { test, expect } from './fixtures'
 test.describe('Navigation', () => {
   test('nav bar has home link', async ({ page }) => {
     await page.goto('/')
-    await expect(page.getByRole('link', { name: 'Home' })).toBeVisible()
+    await expect(page.getByRole('link', { name: 'Home', exact: true })).toBeVisible()
     await expect(page.getByRole('link', { name: 'hsimah', exact: true })).toBeVisible()
   })
 
