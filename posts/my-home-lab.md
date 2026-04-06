@@ -1,6 +1,6 @@
 ---
 title: The Loft Lab
-date: 2026-04-02
+date: 2026-04-02, 2026-04-06
 description: A brief overview of our home lab setup
 ---
 
@@ -13,13 +13,14 @@ This isn't a deep dive into every config file. It's more of a walkthrough - what
 
 ## The Fleet
 
-The Loft runs across three machines:
+The Loft runs across four machines:
 
 | Host | Hardware | Role |
 |------|----------|------|
 | **space-needle** | Minisforum MS-01 (i9) | Primary - runs everything |
 | **viking** | Raspberry Pi 3 B+ | Audio client |
 | **fjord** | Raspberry Pi 3 B+ | Audio client |
+| **calavera** | Surface Pro 2 | Audio capture + kiosk |
 
 The host names come from things I can physically see from my desk. Space Needle - obvious one, I'm in Seattle. Viking and fjord are from a bottle of Vikingfjord vodka sitting on the bar. I like my infrastructure to have a bit of personality.
 
@@ -38,6 +39,7 @@ Here's what's running:
 | **howlr** | Multi-room audio via Music Assistant + Snapcast | Huskies howl. This one streams audio to every room. |
 | **pulsr** | GoToSocial + Phanpy - a private Fediverse instance | Pulsar - a spinning neutron star that emits signals. It posts updates. |
 | **pawst** | Nginx serving static blogs ([hbla.ke](https://hbla.ke) + [hsimah.com](https://hsimah.com)) | Paw + post. It hosts blog posts. You're probably reading this on it. |
+| **spinnik** | Vinyl turntable stream via DarkIce + Icecast | Spin + Sputnik. It captures the turntable and beams the signal to every room. |
 | **iditarod** | GitHub Actions self-hosted runner | The Iditarod is a sled dog race. Runners run. CI runners also run. |
 
 I genuinely enjoy coming up with these. When I add a new service, picking the name is half the fun.
