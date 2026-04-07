@@ -19,7 +19,7 @@ In [the last post](/posts/my-home-lab) I covered The Loft at a high level - what
 
 We live in a two-story condo in Seattle. Upstairs has a balcony with a view of the Space Needle - a nice place to spend an afternoon. Downstairs is where the record player lives, an Audio-Technica LP5X. We specifically picked the LP5X for its Bluetooth audio out, which made it easy to get the signal into a computer without running extra cables.
 
-The LP5X is connected to **calavera**, an ancient Surface Pro 2 that I refuse to retire. We try to reuse as much tech as possible, and the Surface Pro 2 has a nice dock form factor that tucks away neatly next to the turntable. It pulls double duty: the touchscreen runs a kiosk display showing Music Assistant, so we can browse and select music right next to the record player. Underneath, it's also the audio capture host for the stream.
+The LP5X is connected to **calavera**, an ancient Surface Pro 2 that I refuse to retire. We try to reuse as much tech as possible, and the Surface Pro 2 has a nice dock form factor that tucks away neatly next to the turntable. It pulls double duty: the touchscreen runs **spinnik-ui**, a kiosk browser pointing at Music Assistant, so we can browse and select music right next to the record player. Underneath, it's also the audio capture host for the stream. The UI runs directly on calavera as part of the spinnik stack rather than being proxied through mushr.
 
 Vinyl is a fun way to intentionally listen to music. You pick an album, flip it over halfway through, and actually pay attention. The problem was that "intentionally listening" meant sitting in one room. If I put on a record downstairs and walked up to the balcony, I'd lose it.
 
@@ -31,12 +31,13 @@ The missing piece was the turntable. I wanted to drop a needle downstairs and he
 
 ## The Solution
 
-Spinnik (spin + Sputnik, keeping with the space theme) is a two-container stack running on calavera:
+Spinnik (spin + Sputnik, keeping with the space theme) is a three-container stack running on calavera:
 
 | Container | What It Does |
 |-----------|-------------|
 | **spinnik-darkice** | Captures USB audio from the LP5X via ALSA and encodes it as Ogg Vorbis |
 | **spinnik-icecast** | Serves the encoded stream at `http://calavera:8000/vinyl` |
+| **spinnik-ui** | Kiosk browser pointing at Music Assistant for the touchscreen |
 
 The data flow looks like this:
 
