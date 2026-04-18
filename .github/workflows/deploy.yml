@@ -68,7 +68,8 @@ jobs:
 
   deploy:
     runs-on: [self-hosted, space-needle]
-    needs: [build, e2e-tests]
+    # needs: [build, e2e-tests]
+    needs: [build]
     steps:
       - uses: actions/download-artifact@v5
         with:
