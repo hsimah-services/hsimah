@@ -4,9 +4,10 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "prerender": "node --input-type=module --eval \"import { prerender } from 'markr/prerender'; await prerender();\""
+    "build": "markr-prerender",
+    "preview": "markr-serve"
   },
   "dependencies": {
-    "markr": "git+https://github.com/hsimah-services/markr.git#pre-render"
+    "markr": "git+https://github.com/hsimah-services/markr.git#main"
   }
 }
