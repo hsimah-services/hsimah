@@ -10,10 +10,11 @@
     "preview": "vite preview",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
-    "test:e2e:headed": "playwright test --headed"
+    "test:e2e:headed": "playwright test --headed",
+    "prerender": "node --input-type=module --eval \"import { prerender } from 'markr/prerender'; await prerender();\""
   },
   "dependencies": {
-    "markr": "git+https://github.com/hsimah-services/markr.git#main"
+    "markr": "git+https://github.com/hsimah-services/markr.git#pre-render"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
