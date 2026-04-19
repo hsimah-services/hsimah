@@ -8,7 +8,7 @@ description: Why I am ditching Windows 11 for CachyOS and Fedora
 
 This year I've set myself a challenge: spend less time at work and more time on the things that matter. Alongside a morning tai chi routine, I reworked my entire [home lab/network](https://hsimah.com/posts/my-home-lab/) and made [some neat improvements](https://hsimah.com/posts/spinnik/) along the way.
 
-This post is about another ambitious change: ditching Windows 11 for a fully open-source setup. I'm tired of the bloat and ads baked into my OS, and I want to push myself to become genuinely competent with Linux.
+This post is about another ambitious change: ditching Windows 11 for a fully open-source setup. I'm tired of the bloat and ads integrated into my OS, and I want to push myself to become genuinely competent with Linux.
 
 ## Back in the Day
 
@@ -16,9 +16,9 @@ I clearly remember my family crowding around our first computer. It was '91 or '
 
 Since then, Windows has been my daily OS for over 35 years. After Windows 3.0, 3.11 and 98 SE I got my own PC running XP. It was then that I started noodling with Linux, but due to gaming, it was only ever a second tier use case. At uni we used Solaris and at home I was running Slackware as a media server. After uni I ended up being a .NET developer, so it was Windows 7, 8, 10 and then eventually 11. When I got the job at Facebook in 2019 I tried to use a MacBook, but the keyboard layout and shortcuts were so foreign and *just wrong*. After 18 months I went back to a Thinkpad.
 
-Over the past year I've been deep in home automation and lab experiments — all on Linux. As Microsoft pushed LLMs into every corner of the OS, I started wondering whether I was ready to make the leap full time. The LLMs baked into Control Panel and a genuinely broken Start Menu finally settled it. Two days ago I wiped my laptop and replaced it with a fresh install of CachyOS, an Arch-based distro with a focus on gaming hardware.
+Over the past year I've been deep in home automation and lab experiments - all on Linux. As Microsoft pushed LLMs into every corner of the OS, I started wondering whether I was ready to make the leap full time. The LLMs baked into Control Panel and a genuinely broken Start Menu finally settled it. Two days ago I wiped my laptop and replaced it with a fresh install of CachyOS, an Arch-based distro with a focus on gaming hardware.
 
-This is the first in what I expect will be a long-running series. I know there will be challenges — and I know this journey never really ends.
+This is the first in what I expect will be a long-running series. I know there will be challenges - and I know this journey never really ends.
 
 ## Why CachyOS?
 
@@ -48,4 +48,4 @@ Never one to shy away from a challenge I doubled down on this effort this week. 
 
 ## Conclusion
 
-So here I am, starting over. I need to brush up on Bash, Linux internals, and all the things I've let go rusty. I'm a better learner now than I was — and honestly, it's been too long since I had a system to truly own.
+So here I am, starting over. I need to brush up on Bash, Linux internals, and all the things I've let go rusty. I'm a better learner now than I was - and honestly, it's been too long since I had a system to truly own.
