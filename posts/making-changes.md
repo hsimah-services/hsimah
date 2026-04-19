@@ -1,18 +1,18 @@
 ---
 title: Making Changes (draft)
-date: 2026-04-10
+date: 2026-04-20
 description: A (draft) blog about changes I am making
 ---
 
 # Making Changes
+This year I have taken on some the challenge to spend less time at work and more time investing in my home and personal life. In addition to trying to do a short tai chi routine every morning, I reworked my entire [home lab/network](https://hsimah.com/posts/my-home-lab/) and added [some neat improvements](https://hsimah.com/posts/spinnik/) along the way.
 
-- investing more time at home, improving home automation and reducing reliance on close source systems and subscription bloat
-- after 35 years moving away from Windows as my daily driver, chose CachyOS due to wanting to make do some retro gaming and utilize my laptop's hardware
-- started doing some random tai chi in the mornings to improve body movements
+This post is about another ambitious life change - ditching Windows 11 for a full open sourced home set up. I am tired of the bloat and ads in my operating system and want to challenge myself to become a Linux expert.
 
+## Back in the Day
 I clearly remember my family crowding around our first computer. It was '91 or '92 and my dad had brought home an Acer desktop. I didn't really grasp what we were doing but it was very exciting when my mum typed `windows` into the DOS prompt and the screen went blue - *not* as a BSOD, but the loading splashscreen for Windows 3.0.
 
-Since then, Windows has been my daily OS for over 35 years. After Windows 3.0, 3.11 and 98 SE I got my own PC running XP. It was then that I started noodling with Linux, but due to gaming, it was only ever a second tier use case. At uni we used Solaris and at home I was running Slackware as a media server. After uni I ended up being a .NET developer, so it was Windows 7, 8, 10 and then eventually 11. When I got the job at Facebook in 2019 I tried to use a MacBook, but the keyboard layout and shortcuts were so foriegn and *just wrong*. After 18 months I went back to a Thinkpad.
+Since then, Windows has been my daily OS for over 35 years. After Windows 3.0, 3.11 and 98 SE I got my own PC running XP. It was then that I started noodling with Linux, but due to gaming, it was only ever a second tier use case. At uni we used Solaris and at home I was running Slackware as a media server. After uni I ended up being a .NET developer, so it was Windows 7, 8, 10 and then eventually 11. When I got the job at Facebook in 2019 I tried to use a MacBook, but the keyboard layout and shortcuts were so foreign and *just wrong*. After 18 months I went back to a Thinkpad.
 
 In the past year I have been doing a lot of home automation and lab experiements, all using Linux. With Microsoft's push to get LLMs into every aspect of the OS, I started considering whether I wanted to put myself in an uncomfortable position and use Linux full time. Eventually the LLMs in Control Panel and the abysmal performance of the Start Menu pushed me to ditch Windows entirely. Two days ago I wiped my laptop and replaced it with a fresh install of CachyOS, an Arch-based distro with a focus on gaming hardware.
 
@@ -37,5 +37,8 @@ So, I diligently backed up my WSL instance (Ubuntu) and all my SSH keys and conf
 
 Wait - where was the step where I *copied the backup to the USB drive*? Oh yeah, I didn't do that. I have all my config files checked into a Git repo, but the SSH keys were an annoying loss. Oh well, it's not the end of the world to rekey all my home servers, GitHub et al.
 
+## Not By Halves
+Never one to shy away from a challenge I doubled down on this effort this week. My work laptop was well past due for an upgrade. The battery life was non-existent and Windows 11 was sluggish to say the least. I opted for a brand new Thinkpad X1 Carbon with a Fedora image. Yep, not only am I ditching Windows at home but for work too. I am already picking up new skills and [problem solving with Gnome](https://hbla.ke/posts/gnome-chromium-pwa/).
+
 ## Conclusion
-So, here I am at the start of an exciting learning adventure. I will need to brush up on my Bash skills, Linux architecture and all those other nerdy things.
+So, here I am at the start of an exciting learning adventure. I will need to brush up on my Bash skills, Linux architecture and all those other nerdy things. I am quite excited to take this on, I am much better at learning these days and it's been a long time since I got stuck into administering a computer system.
