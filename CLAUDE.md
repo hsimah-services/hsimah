@@ -11,7 +11,8 @@ hblake — a minimal static blog built on [markr](https://github.com/hsimah-serv
 ## Commands
 
 ```bash
-npm run prerender        # Generate static HTML into dist/
+npm run build            # Generate static HTML into dist/
+npm run preview          # Serve dist/ locally
 ```
 
 There is no dev server, build toolchain, linter, or test suite in this repo — all of that lives in markr.

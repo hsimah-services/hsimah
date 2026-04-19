@@ -20,10 +20,9 @@ Your markdown content here.
 
 ```bash
 npm install
-npm run prerender
+npm run build       # generates static site into dist/
+npm run preview     # serve dist/ locally
 ```
-
-This generates the full static site into `dist/`.
 
 ## License
 
