@@ -17,7 +17,7 @@ That's about it. Thanks for stopping by.
 
 ## This Site
 
-Built with vanilla Web Components, TypeScript, and Vite. No frameworks, no runtime dependencies beyond `marked` for markdown rendering. Just the platform.
+Built with [markr](https://github.com/hsimah-services/markr) — a minimal static blog engine I wrote. Posts are markdown files prerendered to static HTML at build time. The only dependency is `marked` for markdown parsing, and that runs at build time. No runtime JavaScript required.
 
 ## External Links
 
