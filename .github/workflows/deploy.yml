@@ -1,26 +1,15 @@
-# ┌──────────────────────────────────────────────────────────────────┐
-# │ SECURITY WARNING — SELF-HOSTED RUNNER                            │
-# │                                                                  │
-# │ The deploy job runs on a SELF-HOSTED runner (space-needle).      │
-# │ The trigger MUST remain `push` to `main` only.                   │
-# │                                                                  │
-# │ NEVER change the trigger to `pull_request`.                      │
-# │ This repo is PRIVATE — but a pull_request trigger would still    │
-# │ execute arbitrary code from that PR on our self-hosted runner.   │
-# │                                                                  │
-# │ See: https://docs.github.com/en/actions/security-for-github-     │
-# │ actions/security-hardening-for-github-actions                    │
-# └──────────────────────────────────────────────────────────────────┘
-
-name: Deploy
+name: Build & Release
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -33,19 +22,14 @@ jobs:
       - run: npm ci
       - run: npm run build
 
-      - uses: actions/upload-artifact@v6
-        with:
-          name: dist
-          path: dist/
+      - name: Package dist tarball
+        run: tar -czf site.tar.gz -C dist .
 
-  deploy:
-    runs-on: [self-hosted, space-needle]
-    needs: [build]
-    steps:
-      - uses: actions/download-artifact@v6
-        with:
-          name: dist
-          path: dist/
-
-      - name: Deploy to pawst
-        run: docker cp dist/. pawst:/usr/share/nginx/hsimah/
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="deploy-$(date -u +%Y%m%d%H%M%S)-${GITHUB_SHA:0:7}"
+          gh release create "$TAG" site.tar.gz \
+            --title "$TAG" \
+            --notes "Auto-release from ${GITHUB_SHA:0:7}"
