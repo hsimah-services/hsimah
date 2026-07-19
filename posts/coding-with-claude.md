@@ -32,3 +32,10 @@ By 9:07pm the branch was merged. Downstairs audio was only actually offline for 
 The polish kept going over the following week in small, low-risk commits - enabling touch swipe-scroll on the dashboard, dialing the HiDPI scale down from 200% to native and then up to a 130% sweet spot, tightening the WiFi watchdog interval for `calavera`'s flakier USB adapter, purging some installer cruft that snuck in. None of it required another evening pulled out of the schedule, because the machine was never broken to begin with.
 
 `calavera`'s third job in its life as an old dock-mounted tablet, and the smoothest changeover yet.
+
+## Claude-clusion
+I am deliberately not going to start writing about how others are using LLMs and agents. There's a lot I do not agree with, and a lot of folks are rightly annoyed and pushing back against "AI slop." I want to shine a positive light on *my* usage of Claude Code and how I am learning to include this new tool in my toolbox.
+
+The LLM provides me a level of discipline I wish I could impose on myself. Regular commits, accurate documentation and, for me especially, tracking debugging notes. (Something I tend to do is solve a tricky problem and assume I will always remember the solution - only for the same thing to present a year later and have no recollection of what I did, just that I *did* something.)
+
+Another day I might write down how I am using agents at work - no token budget and some cool infrastructure options makes for changes at great scale!
