@@ -136,7 +136,7 @@ The fallback handler is clever: if Phanpy returns a 404 (e.g., for a user profil
 
 ## Dnsmasq: Wildcard DNS
 
-For the subdomain URLs to resolve on the LAN, clients need to know that `*.space-needle`, `*.loft.hsimah.com`, `pulsr.hsimah.com`, and `hbla.ke` all point to `space-needle`'s LAN IP. That's what dnsmasq does.
+For the subdomain URLs to resolve on the LAN, clients need to know that `*.space-needle`, `*.loft.hsimah.com`, `pulsr.hsimah.com`, and `hsimah.com` all point to `space-needle`'s LAN IP. That's what dnsmasq does.
 
 The config is minimal:
 
@@ -149,7 +149,7 @@ server=1.0.0.1
 address=/space-needle/192.168.86.28
 address=/loft.hsimah.com/192.168.86.28
 address=/pulsr.hsimah.com/192.168.86.28
-address=/hbla.ke/192.168.86.28
+address=/hsimah.com/192.168.86.28
 ```
 
 Each `address=` line is a wildcard - `address=/space-needle/192.168.86.28` matches `anything.space-needle`. Everything else falls through to Cloudflare DNS (`1.1.1.1`).
@@ -179,7 +179,7 @@ mushr-tunnel:
         condition: service_healthy
 ```
 
-The tunnel exposes two services: `pulsr.hsimah.com` and `hbla.ke`. Everything else stays LAN-only.
+The tunnel exposes two services: `pulsr.hsimah.com` and `hsimah.com`. Everything else stays LAN-only.
 
 ### Why Pulsr Uses `pulsr.hsimah.com` Instead of `pulsr.loft.hsimah.com`
 
@@ -187,7 +187,7 @@ Cloudflare's free Universal SSL only covers single-level subdomains. `pulsr.loft
 
 ### LAN Traffic Bypasses the Tunnel
 
-Because dnsmasq resolves `pulsr.hsimah.com` and `hbla.ke` directly to the LAN IP, local clients never hit Cloudflare. The tunnel only carries external traffic. This means LAN access is fast and doesn't depend on your internet connection.
+Because dnsmasq resolves `pulsr.hsimah.com` and `hsimah.com` directly to the LAN IP, local clients never hit Cloudflare. The tunnel only carries external traffic. This means LAN access is fast and doesn't depend on your internet connection.
 
 ## Docker Networking
 

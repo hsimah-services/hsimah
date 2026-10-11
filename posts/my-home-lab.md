@@ -39,7 +39,7 @@ Here's what's running:
 | [**pupyrus**](/posts/pupyrus) | WordPress site | Puppy + papyrus. A writing surface with a dog pun. |
 | [**howlr**](/posts/howlr) | Multi-room audio via Music Assistant + Snapcast | Huskies howl. This one streams audio to every room. |
 | [**pulsr**](/posts/pulsr) | GoToSocial + Phanpy - a private Fediverse instance | Pulsar - a spinning neutron star that emits signals. It posts updates. |
-| [**pawst**](/posts/pawst) | Nginx serving the static blog ([hbla.ke](https://hbla.ke)) | Paw + post. It hosts blog posts. You're probably reading this on it. |
+| [**pawst**](/posts/pawst) | Nginx serving the static blog ([hsimah.com](https://hsimah.com)) | Paw + post. It hosts blog posts. You're probably reading this on it. |
 | **iditarod** | GitHub Actions self-hosted runner | The Iditarod is a sled dog race. Runners run. CI runners also run. |
 
 I genuinely enjoy coming up with these. When I add a new service, picking the name is half the fun.

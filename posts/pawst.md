@@ -8,9 +8,9 @@ description: Serving a static blog from a single Nginx container using a named D
 
 *Updated October 2026: Pawst now hosts a single site, and deploys changed from CI pushing files into the container to `space-needle` pulling GitHub Releases. The blog is also prerendered HTML now rather than a client-side app. This post reflects the current setup.*
 
-Pawst is the static blog host for [The Loft](https://github.com/hsimah-services/the-loft). It serves [hbla.ke](https://hbla.ke) (the blog you're reading now) from a single Nginx container. The name is "paw" + "post". It hosts blog posts.
+Pawst is the static blog host for [The Loft](https://github.com/hsimah-services/the-loft). It serves [hsimah.com](https://hsimah.com) (the blog you're reading now) from a single Nginx container. The name is "paw" + "post". It hosts blog posts.
 
-It started out serving two sites - hbla.ke and my other blog, hsimah.com - until I merged the two into hbla.ke.
+It started out serving two separate blogs, which I later merged into hsimah.com.
 
 This is the simplest service in the fleet by design. There's no application server, no database, no build step happening on the server. Just Nginx serving static files that arrive from CI.
 
@@ -55,7 +55,7 @@ Named volumes are harder to back up and inspect than bind mounts. You can't just
 ```nginx
 server {
     listen 80;
-    server_name hbla.ke hblake.space-needle pawst.space-needle;
+    server_name hsimah.com hblake.space-needle pawst.space-needle;
     root /usr/share/nginx/hblake;
     index index.html;
 
@@ -133,7 +133,7 @@ The blog is accessible from outside the LAN via [Mushr's](/posts/mushr) Cloudfla
 Internet → Cloudflare Edge → cloudflared → Caddy (mushr) → Nginx (pawst)
 ```
 
-On the LAN, dnsmasq resolves `hbla.ke` directly to `space-needle`'s IP, bypassing the tunnel. Caddy handles TLS termination in both cases - Nginx inside Pawst only serves HTTP on port 80.
+On the LAN, dnsmasq resolves `hsimah.com` directly to `space-needle`'s IP, bypassing the tunnel. Caddy handles TLS termination in both cases - Nginx inside Pawst only serves HTTP on port 80.
 
 ### Why a Separate Nginx Instead of Caddy Directly
 
