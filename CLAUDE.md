@@ -30,7 +30,7 @@ npm run preview          # Preview static output locally (markr-serve)
 
 **Adding a post**: Create a new `.md` file in `posts/` with frontmatter. The filename becomes the URL slug.
 
-**Deployment**: Pushes to `main` trigger a GitHub Action that builds then deploys the `dist/` to the `space-needle` runner via Docker.
+**Deployment**: Pushes to `main` trigger a GitHub Action that builds `dist/` and publishes it as a GitHub release. [The Loft](https://github.com/hsimah/the-loft)'s Pawst service deploys the latest release to `hsimah.com` on `viking`.
 
 **CI**: PRs to `main` trigger a build on GitHub-hosted runners.
 
