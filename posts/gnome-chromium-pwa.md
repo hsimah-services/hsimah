@@ -4,7 +4,7 @@ date: 2026-04-19
 description: Installing the Music Assistant PWA on my Fedora work laptop
 ---
 
-This month I upgraded my work laptop to a new Thinkpad X1 Carbon running Fedora. After setting it up with the necessities (VS Code, my dotfiles etc) I wanted to install the Music Assistant PWA. I use [Music Assistant](https://hbla.ke/posts/howlr/) to manage the distributated sound system at home.
+This month I upgraded my work laptop to a new Thinkpad X1 Carbon running Fedora. After setting it up with the necessities (VS Code, my dotfiles etc) I wanted to install the Music Assistant PWA. I use [Music Assistant](/posts/howlr/) to manage the distributated sound system at home.
 
 It was easy enough to open Music Assistant from [Ungoogled Chromium](https://github.com/ungoogled-software/ungoogled-chromium) as a PWA. But there were a few issues with the runtime experience:
 1. The dash icon was missing, using the Gnome fallback
