@@ -6,10 +6,9 @@ description: Old thoughts on new paradigms - managing software engineering costs
 
 # Reduce, Reuse, Recycle: An Approach to Agentic Development
 
-At my fist software engineering job our total product was around 2.1 million LOC. It was maintained by a staff of dozens of engineers, testers and QA, architects, analysts and managers. It was big, and necessarily so.
-I'm not an economist, but I suspect we're about to have a bit of a problem.
+At my fist software engineering job our total product was around 2.1 million LOC. It was maintained by a staff of dozens of engineers, testers and QA, architects, analysts and managers. It was big, and necessarily so. The drawback was no one person could understand the entire system. It was too complex and a nightmare to make changes in.
 
-AI has made producing code remarkably cheap. Give an agent a problem, and it'll happily produce a solution. Sometimes it's good. Sometimes it's terrible. Usually it works well enough to convince you to move on to the next thing.
+AI has made producing code remarkably cheap. Give an agent a problem, and it'll happily produce a solution. Sometimes it's good. Sometimes it's terrible. Usually it works well enough to convince you to move on to the next thing. It reminds me of that behemoth codebase I first started working with.
 
 The problem is that producing code is only one part of the cost of software.
 
