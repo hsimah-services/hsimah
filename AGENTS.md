@@ -118,7 +118,7 @@ Notes from reading every post on the blog. Use them to keep outlines in Hamish's
 ## Formatting Conventions
 
 - Filename is the slug, kebab-case: `posts/balcony-bar-table.md`.
-- Frontmatter: `title`, `date` (`YYYY-MM-DD`), `description` (one sentence), optional `image` (a hero image rendered above the title). Quote titles containing `[` or `:`.
+- Frontmatter: `title`, `date` (`YYYY-MM-DD`), `description` (one sentence), optional `image` (a hero image rendered above the title). markr's parser is line-based, not YAML: each line splits on its first `:`, so colons and brackets in values are fine, but **don't quote values** - quotes render literally.
 - **Don't repeat the title as a `# H1` in the body** - markr already renders `title` as the page heading, so it appears twice. Start the body with prose or a `##`. (Several older posts do this; don't copy them.)
 - Sections are `##`, subsections `###`. Title Case for technical posts; playful sentence case is fine in essays.
 - Images live in `public/assets/` with descriptive kebab-case names and are referenced as `/assets/<file>`. Every image needs alt text. Nginx serves `/assets/` with a year-long immutable cache, so never overwrite an existing image file - use a new name.
@@ -136,7 +136,7 @@ This is the rubric the `Post Review` workflow follows. Agents reviewing by hand 
 3. **The plan.** Compare the post to the `## Plan` in the PR description. Anything planned that isn't in the post is an omission - name the plan item.
 4. **Leftover scaffolding.** Dot points that are still outline notes rather than prose, `TODO`s, `[image: ...]` markers, `## Open questions`.
 5. **Structure and flow.** Does the hook hook? Is there a closing line? Do headings match their sections? Does a section ramble past its point?
-6. **Correctness of mechanics.** Frontmatter valid, title not duplicated as `# H1`, image paths exist under `public/assets/`, internal links point at real posts, heading levels consistent, a heading that lost its `##`.
+6. **Correctness of mechanics.** Frontmatter valid (no quoted values), title not duplicated as `# H1`, image paths exist under `public/assets/`, internal links point at real posts, heading levels consistent, a heading that lost its `##`.
 7. **Facts that contradict the rest of the blog**, e.g. a host doing a job another post says it no longer does.
 
 ### Blocking vs Suggestion
