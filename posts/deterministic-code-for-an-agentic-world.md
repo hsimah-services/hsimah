@@ -46,7 +46,7 @@ Agents are always reinventing the wheel. Do you need to log something? They will
 Elephentity supports reuse through pattern specs. A pattern defines a shared capability that can be applied to many entities. A blogging platform, for example, might have `VideoPost`, `ImagePost` and `TextPost` entities. Each needs an owner, creation time and comments, so that shared model and behavior can live in a single `IsPost` pattern. Configure it once, then apply it wherever it belongs.
 ## Bring your own builder
 Elephentity mostly cares about mapping the spec to output - the framework was designed to be opinionated about input and output, not the language used. It currently ships with a PHP code generator and the architecture permits support for other languages, e.g. C#. Generators can be in any language, so long as they meet the IR specification. It is completely feasible to have a single spec generate backend code in two languages!
-Integrations are the spice of life
+## Integrations are the spice of life
 Another layer of flexibility built into Elephentity is the concept of Integrations. These are third-party add-ons which can hook into the code generation lifecycle. For example, generating GraphQL resolvers and types from Elephentity specs.
 
 By opting into an integration, a project adds its deterministic outputs to the build. GraphQL works this way today; future integrations could provide logging, REST APIs or other shared capabilities.

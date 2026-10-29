@@ -4,8 +4,6 @@ date: 2026-04-06
 description: Running Plex Media Server in Docker with GPU passthrough, host networking, and a shared media library across five content types
 ---
 
-# Pawpcorn: Plex With Hardware Transcoding
-
 Pawpcorn is the media server for [The Loft](https://github.com/hsimah-services/the-loft). It's Plex, running in Docker with Intel Quick Sync hardware transcoding enabled. The name is "paw" + "popcorn" - what's movie night without snacks?
 
 This is arguably the simplest service in the fleet. It's a single container. But there are a few decisions in how it's configured that are worth explaining.

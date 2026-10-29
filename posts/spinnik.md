@@ -4,8 +4,6 @@ date: 2026-04-06
 description: Capturing USB turntable audio with DarkIce, serving it via Icecast, pinning ALSA devices with udev, and running it all on a locked-down Surface Pro kiosk
 ---
 
-# Spinnik: Streaming Vinyl Over the LAN
-
 *Retired July 2026: in several months I never actually turned the record streaming on, so the spinnik stack was removed. `calavera` is now a [howlr](/posts/howlr) Snapcast client with a Music Assistant touchscreen - see [Calavera's New Role](/posts/calavera-new-role). This post is kept as a write-up of how the build worked.*
 
 Spinnik streams our Audio-Technica LP5X turntable to every room in the condo via [Howlr](/posts/howlr) (Music Assistant + Snapcast). It runs on `calavera` - an old Surface Pro 2 that sits next to the turntable, doubling as both the audio capture host and a touchscreen kiosk for controlling playback. The name is "spin" + "Sputnik", keeping with the space theme.

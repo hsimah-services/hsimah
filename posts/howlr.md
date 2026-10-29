@@ -4,8 +4,6 @@ date: 2026-04-06
 description: Building a whole-home audio system across a condo with Music Assistant, Snapcast, Spotify Connect, AirPlay, and Raspberry Pis - without buying a Sonos
 ---
 
-# Howlr: Multi-Room Audio With Music Assistant and Snapcast
-
 *Updated September 2026: the Upstairs Snapcast client is now `woodstock`, a Surface Pro with a Music Assistant touchscreen, instead of `viking`. `woodstock`'s story [can be read here](/posts/woodstock-calaveras-older-sibling)*
 *Updated July 2026: the Downstairs Snapcast client is now `calavera`, a Surface Pro 2 with a Music Assistant touchscreen, instead of `fjord`, and the turntable stream ([spinnik](/posts/spinnik)) has been retired. The rest of this post describes the original Raspberry Pi setup. See [Calavera's New Role](/posts/calavera-new-role) for the details.*
 

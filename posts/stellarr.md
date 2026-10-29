@@ -4,8 +4,6 @@ date: 2026-04-06
 description: Running Radarr, Sonarr, Lidarr, Jackett, Transmission, and Soulseek as a single compose stack with shared VPN networking and automated torrent cleanup
 ---
 
-# Stellarr: The *arr Stack Behind a VPN
-
 Stellarr is the media acquisition layer for [The Loft](https://github.com/hsimah-services/the-loft). It bundles seven containers into a single compose file: a NordVPN container providing a shared WireGuard tunnel, Transmission and slskd routing through that tunnel, and Radarr, Sonarr, Lidarr, and Jackett running on the host network. The name is "stellar" + the *arr naming convention - a stellar collection of stars.
 
 ## Why One Compose File

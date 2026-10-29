@@ -1,10 +1,8 @@
 ---
-title: "[the-loft] Off the Host Network"
+title: [the-loft] Off the Host Network
 date: 2026-05-11
 description: Moving the *arr stack onto a shared Docker bridge, unifying stellarr's compose config, and replacing host.docker.internal with container hostnames in Caddy
 ---
-
-# Off the Host Network
 
 When I first wrote up [stellarr](/posts/stellarr), the *arr apps (Radarr, Sonarr, Lidarr, Jackett) were all running with `network_mode: host`. It worked, but it was sloppy. Every service had its own port mapping conventions, its own UID/GID handling, its own download paths. Some containers leaked ports onto the host that [Caddy](/posts/mushr) was already covering. The whole stack felt like it had grown by accretion rather than design.
 

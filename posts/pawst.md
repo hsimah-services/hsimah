@@ -4,8 +4,6 @@ date: 2026-04-06
 description: Serving a static blog from a single Nginx container using a named Docker volume, server_name routing, and pull-based deploys from GitHub Releases
 ---
 
-# Pawst: Static Blog Hosting With Nginx and CI
-
 *Updated October 2026: Pawst now hosts a single site, and deploys changed from CI pushing files into the container to `space-needle` pulling GitHub Releases. The blog is also prerendered HTML now rather than a client-side app. This post reflects the current setup.*
 
 Pawst is the static blog host for [The Loft](https://github.com/hsimah-services/the-loft). It serves [hsimah.com](https://hsimah.com) (the blog you're reading now) from a single Nginx container. The name is "paw" + "post". It hosts blog posts.
