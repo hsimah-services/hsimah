@@ -4,8 +4,6 @@ date: 2026-04-02
 description: A brief overview of our home lab setup
 ---
 
-# The Loft: My Over-Engineered Homelab
-
 *Updated October 2026: calavera has a new job, spinnik has been retired, and fjord is being freed up for other projects. The tables below reflect the current fleet - see [Calavera's New Role](/posts/calavera-new-role) for the details.*
 
 I run a homelab called **The Loft**. It's a handful of machines tucked into a corner of our condo, quietly running all the services my household depends on - media, music, blogs, a Fediverse instance, and more. The whole thing is managed from [a single Git repo](https://github.com/hsimah-services/the-loft) and deployed with a couple of shell scripts.

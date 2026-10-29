@@ -4,8 +4,6 @@ date: 2026-04-06
 description: How we route all traffic through Caddy with real TLS certs, wildcard DNS via dnsmasq, and external access via Cloudflare Tunnel - without opening a single port on the router
 ---
 
-# Mushr: Reverse Proxy, DNS, and Tunnels
-
 Mushr is the traffic layer for [The Loft](https://github.com/hsimah-services/the-loft). It handles three things: reverse proxying every web service through Caddy with real TLS certificates, wildcard DNS resolution on the LAN via dnsmasq, and external access to selected services through a Cloudflare Tunnel. The name comes from "musher" - the person driving a dog sled. Mushr drives all the traffic.
 
 This post walks through the full configuration, why each piece exists, and the trade-offs involved.

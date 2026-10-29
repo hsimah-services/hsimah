@@ -4,8 +4,6 @@ date: 2026-04-20
 description: Why I am ditching Windows 11 for CachyOS and Fedora
 ---
 
-# Showing Windows the Door
-
 This year I've set myself a challenge: spend less time at work and more time on the things that matter. Alongside a morning tai chi routine, I reworked my entire [home lab/network](/posts/my-home-lab) and made [some neat improvements](/posts/spinnik) along the way.
 
 This post is about another ambitious change: ditching Windows 11 for a fully open-source setup. I'm tired of the bloat and ads integrated into my OS, and I want to push myself to become genuinely competent with Linux.

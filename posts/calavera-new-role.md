@@ -4,8 +4,6 @@ date: 2026-07-17
 description: Retiring the vinyl kiosk, freeing fjord for a cyberdeck, and reimaging a decade-old Surface Pro in one sitting with Claude keeping me on track
 ---
 
-# Calavera's New Job
-
 I've written about [the Loft](/posts/my-home-lab) and about [spinnik](/posts/spinnik), the vinyl-streaming rig that turned our turntable into a whole-home audio source. Both posts feature **calavera**, the Surface Pro 2 I refuse to retire. It just changed jobs again, and the way I made that change is the more interesting story.
 
 ## What Calavera Used To Do

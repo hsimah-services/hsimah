@@ -4,8 +4,6 @@ date: 2026-04-06
 description: Running WordPress in Docker with MariaDB, Redis object caching, WPGraphQL for headless access, and automated setup via WP-CLI
 ---
 
-# Pupyrus: WordPress With Redis and WPGraphQL
-
 Pupyrus is the WordPress installation for [The Loft](https://github.com/hsimah-services/the-loft). It runs as a four-container stack: WordPress, MariaDB, Redis for object caching, and a WP-CLI container for automated setup. The name is "puppy" + "papyrus" - a writing surface with a dog pun.
 
 WordPress might seem like an odd choice for a homelab blog when static site generators exist (and we use one for [hsimah.com](/posts/pawst)). But Pupyrus isn't just a blog - it's a headless CMS that exposes content via GraphQL, which other projects in the fleet can consume. Members of the household know the WordPress platform well and have previously built plugins we want to reuse. I was also an early contributor to the [WPGraphQL](https://github.com/wp-graphql/wp-graphql) ecosystem, having built plugins like [wp-graphql-metabox](https://github.com/hsimah-services/wp-graphql-metabox), so the GraphQL integration is a natural fit.
