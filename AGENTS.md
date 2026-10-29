@@ -40,7 +40,7 @@ description: One sentence for the feed card
 
 - Headings are real working headings, not placeholders - Hamish may keep them.
 - One idea per dot point. Nest for examples and evidence.
-- Mark images with where they go: `- [image: before photo, public/assets/<file>.jpg]`.
+- If photos are already available, commit them to `public/assets/` and place the real image markdown (with alt text and caption) where it belongs. Otherwise mark the spot: `- [image: before photo]`.
 - Note links to other posts that should be cross-referenced.
 - Put unresolved questions under a final `## Open questions` section rather than guessing at facts.
 
