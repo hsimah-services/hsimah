@@ -34,6 +34,14 @@ npm run preview          # Preview static output locally (markr-serve)
 
 **CI**: PRs to `main` trigger a build on GitHub-hosted runners.
 
+**Post review**: Adding the `claude-review` label to a PR runs `.github/workflows/post-review.yml`, which reviews the changed posts and replaces the label with `go` or `no-go`.
+
 ## Conventions
 
 - File naming: kebab-case for files
+
+## Writing
+
+Hamish's voice, the co-authoring workflow and the review rubric are in AGENTS.md:
+
+@AGENTS.md
