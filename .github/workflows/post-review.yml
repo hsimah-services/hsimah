@@ -56,9 +56,10 @@ jobs:
 
             1. Find the posts and pages this PR changes with `gh pr diff --name-only`.
                Only review files under `posts/` and `pages/`.
-            2. Read the plan: the `## Plan` section of the PR description
-               (`gh pr view --json body`). If there is no plan, use the first committed
-               version of the post on this branch (`git log --reverse -p -- <file>`).
+            2. Find the plan. If the PR description (`gh pr view --json body`) has a
+               `## Plan` section, that is the plan. Otherwise the plan is the latest
+               version of the post in this branch's history that was still an outline
+               (headings with dot points rather than prose): check `git log -p -- <file>`.
             3. Read earlier review rounds (`gh pr view --comments`, and
                `gh api repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/comments`
                for inline threads). Don't repeat a comment that is still open or that

@@ -1,6 +1,21 @@
 # AGENTS.md
 
-Guidance for agents helping Hamish write and review posts for hsimah.com. Repo mechanics (build, deploy, markr) are in `CLAUDE.md`; this file is about the writing.
+Guidance for agents working on hsimah.com: the repo, Hamish's writing, and how posts are co-authored and reviewed.
+
+## The Repo
+
+A minimal static blog built on [markr](https://github.com/hsimah-services/markr). This repo is a thin consumer: `markr.config.ts` sets the title, fonts and colours, and the content is markdown in `posts/` (one file per post, filename = slug) and `pages/` (e.g. About). All rendering, routing and theming lives in markr - keep it that way.
+
+```bash
+npm run build     # prerender one static HTML file per route into dist/
+npm run preview   # serve dist/ locally
+```
+
+- **Routes**: `/` (feed, newest first), `/posts/<slug>`, and one per page in `pages/`.
+- **Static files**: `public/` is copied as-is; images go in `public/assets/`.
+- **Deploy**: a push to `main` runs `.github/workflows/deploy.yml`, which builds `dist/` and publishes it as a GitHub release. [The Loft](https://github.com/hsimah/the-loft)'s Pawst service pulls the latest release and serves it as `hsimah.com` on `viking`.
+- **Review**: adding the `claude-review` label to a PR runs `.github/workflows/post-review.yml` (see [Authoring Workflow](#authoring-workflow)). There is no other PR CI.
+- File names are kebab-case.
 
 ## Authoring Workflow
 
@@ -8,8 +23,8 @@ Posts are co-authored in four stages. Stay in your lane at each one: the prose i
 
 1. **Talk it through.** Hamish describes the subject and what the post should cover. Ask questions, poke at gaps, suggest angles, but don't draft prose. Keep going until Hamish says the scope is right.
 2. **Outline.** Organise the conversation into a structured post: `##` section headings with dot points under each. This is the most valuable step - Hamish's first telling tends to ramble, so the job is to find the shape: what order, what's one section vs two, what's the hook, what's the closing line. Keep Hamish's phrasing where it exists, and put good lines from the conversation in quotes so they survive into the draft.
-3. **Open a PR.** Commit the outline as the post itself (`posts/<slug>.md`, with frontmatter) on a new branch and open a PR to `main`. The PR description carries the agreed plan (see [PR Format](#pr-format)) - it's what the review checks the finished post against, since the outline in the file gets overwritten as Hamish writes.
-4. **Review loop.** Hamish writes the prose on the branch. To ask for a review, Hamish adds the `claude-review` label. The `Post Review` workflow (`.github/workflows/post-review.yml`) runs Claude against the PR, leaves inline comments and a summary, and swaps the label for `go` or `no-go`. Repeat until `go`.
+3. **Open a PR.** Commit the outline as the post itself (`posts/<slug>.md`, with frontmatter) on a new branch and open a PR to `main`. The PR *is* the plan: the outline commit is what the review checks the finished post against.
+4. **Review loop.** Hamish picks up the PR and writes the prose over the outline. To ask for a review, Hamish adds the `claude-review` label. The `Post Review` workflow (`.github/workflows/post-review.yml`) runs Claude against the PR, leaves inline comments and a summary, and swaps the label for `go` or `no-go`. Repeat until `go`.
 
 ### Outline Format
 
@@ -48,19 +63,9 @@ description: One sentence for the feed card
 
 - Branch: kebab-case, named after the post (e.g. `balcony-bar-table`).
 - Title: `Add post: <post title>`.
-- Description:
+- Description: a short summary and any open questions.
 
-```markdown
-## Plan
-
-<the agreed outline, or a condensed version of it: every section and the points it must cover>
-
-## Open questions
-
-<anything still to decide; delete if none>
-```
-
-The `## Plan` section is the contract the reviewer checks against. If Hamish deliberately drops something, the fix is to edit the plan in the PR description so the review stops asking for it.
+The plan the reviewer checks against is the latest outline version of the post in the branch history. If the scope changes on purpose, add a `## Plan` section to the PR description - it overrides the outline, so the review stops asking for what was dropped.
 
 ## Hamish's Voice
 
@@ -133,7 +138,7 @@ This is the rubric the `Post Review` workflow follows. Agents reviewing by hand 
 
 1. **Typos and spelling.** Including product and project names (Puslr/Pulsr, distributated, cental).
 2. **Grammar.** Comma splices, run-ons that lose the reader, missing or doubled words, tense slips ("would be nice if it has Just Worked").
-3. **The plan.** Compare the post to the `## Plan` in the PR description. Anything planned that isn't in the post is an omission - name the plan item.
+3. **The plan.** Compare the post to the plan (a `## Plan` in the PR description if there is one, otherwise the latest outline version of the post in the branch history). Anything planned that isn't in the post is an omission - name the plan item.
 4. **Leftover scaffolding.** Dot points that are still outline notes rather than prose, `TODO`s, `[image: ...]` markers, `## Open questions`.
 5. **Structure and flow.** Does the hook hook? Is there a closing line? Do headings match their sections? Does a section ramble past its point?
 6. **Correctness of mechanics.** Frontmatter valid (no quoted values), title not duplicated as `# H1`, image paths exist under `public/assets/`, internal links point at real posts, heading levels consistent, a heading that lost its `##`.
