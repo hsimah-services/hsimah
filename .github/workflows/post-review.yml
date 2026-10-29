@@ -1,0 +1,95 @@
+name: Post Review
+
+# Add the `claude-review` label to a PR to request a review. Claude comments on
+# the changed posts and replaces the label with `go` or `no-go`.
+on:
+  pull_request:
+    types: [labeled]
+
+concurrency:
+  group: post-review-${{ github.event.pull_request.number }}
+
+jobs:
+  review:
+    if: github.event.label.name == 'claude-review'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      PR: ${{ github.event.pull_request.number }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Clear review labels
+        run: gh pr edit "$PR" --repo "$GITHUB_REPOSITORY" --remove-label claude-review --remove-label go --remove-label no-go
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Build
+        id: build
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          npm ci
+          npm run build 2>&1 | tee build.log
+
+      - uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ github.token }}
+          prompt: |
+            REPO: ${{ github.repository }}
+            PR NUMBER: ${{ github.event.pull_request.number }}
+            BUILD: ${{ steps.build.outcome }} (log in build.log)
+
+            You are reviewing a blog post draft for hsimah.com. Read AGENTS.md first:
+            the "Hamish's Voice" section tells you what the author's writing is meant
+            to sound like, and "Reviewing a Post" is the rubric you must follow.
+
+            1. Find the posts and pages this PR changes with `gh pr diff --name-only`.
+               Only review files under `posts/` and `pages/`.
+            2. Find the plan. If the PR description (`gh pr view --json body`) has a
+               `## Plan` section, that is the plan. Otherwise the plan is the latest
+               version of the post in this branch's history that was still an outline
+               (headings with dot points rather than prose): check `git log -p -- <file>`.
+            3. Read earlier review rounds (`gh pr view --comments`, and
+               `gh api repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/comments`
+               for inline threads). Don't repeat a comment that is still open or that
+               the author replied to or declined.
+            4. Review each post against the rubric. For each issue, leave an inline
+               comment on the line with `mcp__github_inline_comment__create_inline_comment`.
+               For typo and grammar fixes, include a ```suggestion block so the author
+               can apply it in one click. Keep suggestions in the author's voice.
+               Start every inline comment with **Blocking** or **Suggestion**.
+            5. Post one summary comment with `gh pr comment`:
+               - First line: `## Verdict: GO` or `## Verdict: NO-GO`
+               - Plan coverage: each plan item, marked covered or missing.
+               - Blocking issues (if any), then suggestions, as short lists.
+               - If the build failed, say so and quote the relevant error.
+            6. Apply exactly one label with `gh pr edit ${{ github.event.pull_request.number }} --add-label go`
+               or `--add-label no-go`. It's `go` only if there are no blocking issues
+               and the build succeeded.
+
+            Don't edit files or push commits. The author writes the post.
+          claude_args: |
+            --model claude-opus-5-5
+            --allowedTools "Read,Glob,Grep,mcp__github_inline_comment__create_inline_comment,Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh pr comment:*),Bash(gh pr edit:*),Bash(gh api:*),Bash(git log:*),Bash(git show:*),Bash(git diff:*)"
+
+      - name: Check verdict
+        if: always()
+        run: |
+          verdict=$(gh pr view "$PR" --repo "$GITHUB_REPOSITORY" --json labels \
+            --jq '[.labels[].name | select(. == "go" or . == "no-go")] | join(" ")')
+          case "$verdict" in
+            go|no-go) echo "Verdict: $verdict" ;;
+            "") echo "::error::Review finished without a go/no-go label - re-add claude-review to retry"; exit 1 ;;
+            *) echo "::error::Conflicting verdict labels: $verdict"; exit 1 ;;
+          esac
