@@ -2,7 +2,6 @@
 title: Just Do It: Rebuilding the Balcony Bar Table
 date: 2026-10-30
 description: Replacing a rotted fold-down balcony table with new timber, a circular saw and some momentum borrowed from the home lab
-image: /assets/balcony-bar-table-view.jpg
 ---
 As much as it pains me to admit - I am not proficient at building things. It's a goal of mine to get better and this post goes over a recent home fix-it project I completed. I'd love to be one of those DIY guys, but it is a struggle to get out of one's comfort zone and accomplish things when you are short on skills, tools *and* space (I live in an inner city condo). In the end it took a good weekend in the home lab to make me _just do it_.
 
