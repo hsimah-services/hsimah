@@ -10,7 +10,7 @@ I wanted that speaker in the [howlr](/posts/howlr) fleet, so I gave it a dedicat
 Since the speaker is within earshot of `woodstock`, the two have to play in sync - and Bluetooth playback adds latency.
 
 ## The Audio Path
-
+```text
 snapclient (Docker) → bluealsa ALSA plugin → system D-Bus → bluealsa daemon (host) → BlueZ → speaker
 ```
 
