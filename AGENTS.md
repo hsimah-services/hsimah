@@ -13,7 +13,7 @@ npm run preview   # serve dist/ locally
 
 - **Routes**: `/` (feed, newest first), `/posts/<slug>`, and one per page in `pages/`.
 - **Static files**: `public/` is copied as-is; images go in `public/assets/`.
-- **Deploy**: a push to `main` runs `.github/workflows/deploy.yml`, which builds `dist/` and publishes it as a GitHub release. [The Loft](https://github.com/hsimah/the-loft)'s Pawst service pulls the latest release and serves it as `hsimah.com` on `viking`.
+- **Deploy**: a push to `main` runs `.github/workflows/deploy.yml`, which builds `dist/` and publishes it as a GitHub release. That doesn't put it live: Hamish then runs `loft-ctl deploy pawst hsimah` on `viking`, and [The Loft](https://github.com/hsimah/the-loft)'s Pawst service pulls the latest release and serves it as `hsimah.com`. `gh workflow run deploy.yml` cuts a release without a new commit.
 - **Review**: adding the `claude-review` label to a PR runs `.github/workflows/post-review.yml` (see [Authoring Workflow](#authoring-workflow)). There is no other PR CI.
 - File names are kebab-case.
 
