@@ -3,7 +3,7 @@ title: Owning a Bluetooth Speaker With a Raspberry Pi and Snapcast
 date: 2026-10-29
 description: Turning a Raspberry Pi 3 B+ into a dedicated Bluetooth source for a light-with-speaker, and syncing it with the rest of the howlr whole-home audio setup
 ---
-This year I successfully [set up condo-wide Snapcast streaming](https://hsimah.com/posts/howlr/). Upstairs has two rooms - the Sun Room, where my wife dances and stretches and the master bedroom. [`woodstock`](https://hsimah.com/posts/woodstock-calaveras-older-sibling/) lives in the Sun Room but can be heard very quietly in the master bedroom. As luck would have it, we have a Bluetooth speaker in our bedroom - an unbranded LED light with a phone charger and speaker built in (though no 3.5mm jack).
+This year I successfully [set up condo-wide Snapcast streaming](/posts/howlr). Upstairs has two rooms - the Sun Room, where my wife dances and stretches, and the master bedroom. [`woodstock`](/posts/woodstock-calaveras-older-sibling) lives in the Sun Room but can be heard very quietly in the master bedroom. As luck would have it, we have a Bluetooth speaker in our bedroom - an unbranded LED light with a phone charger and speaker built in (though no 3.5mm jack).
 
 I wanted that speaker in the [howlr](/posts/howlr) fleet, so I gave it a dedicated Bluetooth source: `fjord`, a Raspberry Pi 3 B+. My [home lab repo](https://github.com/hsimah/the-loft) is configured to easily deploy services to managed hosts, so it was a breeze getting `fjord` back on the `howlr`.
 
