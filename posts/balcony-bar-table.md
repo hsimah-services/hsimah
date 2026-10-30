@@ -1,6 +1,6 @@
 ---
 title: Just Do It: Rebuilding the Balcony Bar Table
-date: 2026-10-27
+date: 2026-10-30
 description: Replacing a rotted fold-down balcony table with new timber, a circular saw and some momentum borrowed from the home lab
 image: /assets/balcony-bar-table-view.jpg
 ---
@@ -17,7 +17,7 @@ By summer this year, the planks had rotted through right down to the brackets. T
 
 ## Doing the Homework
 
-I don't know the first thing about timber - that's where the magic of the LLM came in so handy. With Claude I researched the suppliers in my area, what planks were available and in what sizes. I only have a circular saw, so I did not want to do lengthwise cuts - I already have a wobbly finish on the desktop I made last year. I can do a cross cut just fine, though, so longer than necessary was fine. We then filtered down by treated wood, ready to live outdoors in the Seattle weather.
+I don't know the first thing about timber - that's where the magic of the LLM came in so handy. With Claude I researched the suppliers in my area, what planks were available and in what sizes. I only have a circular saw, so I did not want to do lengthwise cuts - I already have a wobbly finish on the desktop I made last year. I can do a cross cut just fine, though, so planks longer than I needed were okay. We then filtered down by treated wood, ready to live outdoors in the Seattle weather.
 
 So, together Claude and I worked out:
 
@@ -25,7 +25,7 @@ So, together Claude and I worked out:
 - how much I needed
 - what sizes to have the planks cut to
 
-After ordering the planks, the wood arrived (fancy that)... and sat there. I was too apprehensive to start.
+I ordered the planks, the wood arrived (fancy that)... and sat there. I was too apprehensive to start.
 
 ## The Push
 After riding high getting my [third Music Assistant speaker](/posts/owning-a-bluetooth-speaker-with-a-raspberry-pi) and my as-yet-to-be-written-up new [LLM hardware](https://github.com/hsimah/the-loft/releases/tag/2026-10-29_0) provisioned, I rushed home from the office on Monday determined to be *more* accomplished.
@@ -40,7 +40,7 @@ Next up was removing the rotten planks, which was actually really easy. Then all
 ## Things That Didn't Quite Fit
 The replacement boards were 5/4" (what a measurement) and the previous ones were 1", so the screws didn't bite as far into the wood. In the end it feels fairly solid. I can get longer screws or use some wood glue if needed, but I think it will hold.
 
-I am not an expert in wood. I looked at the Home Depot guides and cross checked with Claude and these treated pine planks are supposed to be appropriate for unpainted fence posts. Will it survive? I don't know. I have some wood stain and sealant in the tool cupboard, so I might apply that.
+I am not an expert in wood. I looked at the Home Depot guides and cross-checked with Claude, and these treated pine planks are supposed to be appropriate for unpainted fence posts. Will it survive? I don't know. I have some wood stain and sealant in the tool cupboard, so I might apply that.
 
 ## The Result
 
@@ -53,5 +53,6 @@ It works. Folds up into a proper bar table, folds down into a clean panel. The i
 *The view it was built for, over Lake Union.*
 
 ## What's Next?
-I'm proud of this one. It was a small project, sure, but Georgia and I love being out on the balcony, so it has an outsized impact on our lifestyle. 
-It was the first time in a while I've built something physical rather than something on a server. Every completed project gives you that XP bonus which you can use to funnel into the next one and I am investing in building up the skills, tools and space to do be even more handy.
+I'm proud of this one. It was a small project, sure, but Georgia and I love being out on the balcony, so it has an outsized impact on our lifestyle.
+
+It was the first time in a while I've built something physical rather than something on a server. Every completed project gives you that XP bonus which you can use to funnel into the next one and I am investing in building up the skills, tools and space to be even more handy.
