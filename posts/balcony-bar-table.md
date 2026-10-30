@@ -1,5 +1,5 @@
 ---
-title: Just Do It: Rebuilding the Balcony Bar Table
+title: Just Do It - Rebuilding the Balcony Bar Table
 date: 2026-10-30
 description: Replacing a rotted fold-down balcony table with new timber, a circular saw and some momentum borrowed from the home lab
 ---
