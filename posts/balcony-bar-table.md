@@ -4,7 +4,7 @@ date: 2026-10-27
 description: Replacing a rotted fold-down balcony table with new timber, a circular saw and some momentum borrowed from the home lab
 image: /assets/balcony-bar-table-view.jpg
 ---
-As much as it pains me to admit - I am not proficient at building things. It's a goal of mine to get better and this post goes over a recent home fix-it project I completed. I'd love to be one of those DIY guys, but it is a struggle to get out of one's comfort zone and accomplish things when you are short on skills, tools *and* space (I live in an inner city condo). 
+As much as it pains me to admit - I am not proficient at building things. It's a goal of mine to get better and this post goes over a recent home fix-it project I completed. I'd love to be one of those DIY guys, but it is a struggle to get out of one's comfort zone and accomplish things when you are short on skills, tools *and* space (I live in an inner city condo). In the end it took a good weekend in the home lab to make me _just do it_.
 
 ## Two Summers of Rot
 Our upstairs balcony has a wonderful view of Lake Union - on a summer evening it is the best seat in the house. We put the umbrella and the fold out bench up and watch the ships, boats, paddle boarders and seaplanes go by.
@@ -47,10 +47,11 @@ I am not an expert in wood. I looked at the Home Depot guides and cross checked 
 ![The finished table, folded up for use and folded down flat against the railing](/assets/balcony-bar-table-after.jpg)
 *After: up for use, and folded down flat.*
 
-It works. Folds up into a proper bar table, folds down into a clean panel. The impact driver and a cold beer made it into the photos "for good reason".
+It works. Folds up into a proper bar table, folds down into a clean panel. The impact driver and a cold beer made it into the photos for good reason - one did the work, the other was the reward.
 
-![](/assets/balcony-bar-table-view.jpg)
+![The finished table, view of the Space Needle and Lake Union](/assets/balcony-bar-table-view.jpg)
 *The view it was built for, over Lake Union.*
 
 ## What's Next?
-I'm proud of this one. It was a small project, sure, but Georgia and I love being out on the balcony, so it has an outsized impact on our lifestyle. Every completed project gives you that XP bonus which you can use to funnel into the next one.
+I'm proud of this one. It was a small project, sure, but Georgia and I love being out on the balcony, so it has an outsized impact on our lifestyle. 
+It was the first time in a while I've built something physical rather than something on a server. Every completed project gives you that XP bonus which you can use to funnel into the next one and I am investing in building up the skills, tools and space to do be even more handy.
