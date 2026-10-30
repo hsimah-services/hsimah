@@ -13,23 +13,24 @@ Sadly, since we moved in I knew the wood needed replacing. Two winters ago it be
 ![The old table: planks split along the grain and rotted through to the brackets underneath](/assets/balcony-bar-table-before.jpg)
 *Before: split planks, rotted right through to the brackets.*
 
-By summer this year, the planks had rotted through right down to the brackets. The grain had split and see right through. I promised Georgia I would fix it before the end of summer. I failed at that.
+By summer this year, the planks had rotted through right down to the brackets. The grain had split and you could see right through. I promised Georgia I would fix it before the end of summer. I failed at that.
 
 ## Doing the Homework
 
-I don't know the first thing about timber - that's where the magic of the LLM came in so handy. With Claude I did researched the suppliers in my area, what planks were available and in what sizes. I only have a circular saw, so I did not want to do lengthwise cuts - I already have a wobbly finish on the desktop I made last year. I can do a cross cut just fine, though, so longer than necessary was fine. We then filtered down by treated wood, ready to live outdoors in the Seattle weather.
+I don't know the first thing about timber - that's where the magic of the LLM came in so handy. With Claude I researched the suppliers in my area, what planks were available and in what sizes. I only have a circular saw, so I did not want to do lengthwise cuts - I already have a wobbly finish on the desktop I made last year. I can do a cross cut just fine, though, so longer than necessary was fine. We then filtered down by treated wood, ready to live outdoors in the Seattle weather.
 
-So, together Claude and I:
-  - what type of wood to buy
-  - how much I needed
-  - what sizes to have the planks cut to
+So, together Claude and I worked out:
+
+- what type of wood to buy
+- how much I needed
+- what sizes to have the planks cut to
 
 After ordering the planks, the wood arrived (fancy that)... and sat there. I was too apprehensive to start.
 
 ## The Push
 After riding high getting my [third Music Assistant speaker](/posts/owning-a-bluetooth-speaker-with-a-raspberry-pi) and my as-yet-to-be-written-up new [LLM hardware](https://github.com/hsimah/the-loft/releases/tag/2026-10-29_0) provisioned, I rushed home from the office on Monday determined to be *more* accomplished.
 
-I had already done most of the planning - the planks needed to be cut down from 8' to 6', the hardware was still in good nick and was to be reused. With my pencil and square I marked the cuts and using two recently-rehomed planter boxes (thank you Buy Nothing groups on Facebook!) as sawhorses I trimmed the wood.
+I had already done most of the planning - the planks needed to be cut down from 8' to 6', the hardware was still in good nick and was to be reused. With my pencil and square I marked the cuts, and, using two recently-rehomed planter boxes (thank you Buy Nothing groups on Facebook!) as sawhorses, I trimmed the wood.
 
 Next up was removing the rotten planks, which was actually really easy. Then all I needed was to mark where the bracket screw holes were on the planks, ensuring there was a 2mm gap between them for aesthetics. I sanded the planks down with 60 and then 220 grit paper (it's all I have) and mounted them. I sprayed a little WD-40 on the hinges and we were done!
 
@@ -48,7 +49,7 @@ I am not an expert in wood. I looked at the Home Depot guides and cross checked 
 
 It works. Folds up into a proper bar table, folds down into a clean panel. The impact driver and a cold beer made it into the photos "for good reason".
 
-![The finished table from the side, looking out over Lake Union]()
+![](/assets/balcony-bar-table-view.jpg)
 *The view it was built for, over Lake Union.*
 
 ## What's Next?
